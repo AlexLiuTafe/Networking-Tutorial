@@ -205,12 +205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1220e8b7298ca54408f7c920d1dd7cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireInterval: 0
+  fireInterval: 1
   fireRate: 1
   range: 100
   mask:
     serializedVersion: 2
     m_Bits: 1024
+  camera: {fileID: 0}
 --- !u!1 &7846033412860801207
 GameObject:
   m_ObjectHideFlags: 0

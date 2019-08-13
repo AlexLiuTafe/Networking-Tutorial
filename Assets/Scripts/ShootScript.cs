@@ -13,12 +13,12 @@ public class ShootScript : NetworkBehaviour
     //Private
     private Transform shootPos;
     private float fireFactor = 0f;
-    private GameObject mainCamera;//We use GameObject because we attach them in the Parent
+    public Camera camera;//We use GameObject because we attach them in the Parent
     // Start is called before the first frame update
     void Start()
     {
 
-        Camera mainCamera = GetComponentInChildren<Camera>();
+		camera = GetComponentInChildren<Camera>(); //Camera in attached in player;
 
     }
 
@@ -53,11 +53,11 @@ public class ShootScript : NetworkBehaviour
     void Shoot()
     {
 
-        RaycastHit _hit;
-        if (Physics.Raycast(transform.position, transform.forward, range))
+        RaycastHit hit;
+        if (Physics.Raycast(camera.transform.position,camera.transform.forward,out hit,range))
         {
             //If Hit the player ID
-            if ()
+            if (hit.collider.CompareTag("Player"))
             {
                 Cmd_PlayerShot();
             }
